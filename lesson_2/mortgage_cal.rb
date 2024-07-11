@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 # build a mortgage calculator
 # (or car payment calculator -- it's the same thing) that determines the monthly
 # payment assuming that interest is compounded monthly.
 
 def valid_float(float)
- float >= 0
+  float >= 0
 end
 
 def valid_integar(int)
@@ -24,13 +26,11 @@ loop do
     break if valid_integar(loan_amount)
 
     message('Can you try again with a valid number please?')
-
   end
 
   apr = ''
 
   loop do
-
     message('Great! What is your APR (Annual Percentage Rate)?')
     apr = gets.chomp.to_f
     break if valid_float(apr)
@@ -38,7 +38,7 @@ loop do
     message('Hmm please try taht agian (your APR has to be over 0%)')
   end
 
-  apr /= 100 
+  apr /= 100
   monthly_interest = apr / 12
 
   loan_duration = ''
@@ -64,4 +64,4 @@ loop do
   break if ans == 'N'
 end
 
-message("Thanks for coming by!")
+message('Thanks for coming by!')
